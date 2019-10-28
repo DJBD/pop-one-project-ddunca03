@@ -24,7 +24,7 @@ def compute_total_distance(road_map):
     the connections in the `road_map`. Remember that it's a cycle, so that 
     (for example) in the initial `road_map`, Wyoming connects to Alabama...
     """
-    pass
+    return(111.111)
 
 
 def swap_cities(road_map, index1, index2):
@@ -38,7 +38,8 @@ def swap_cities(road_map, index1, index2):
     Allow for the possibility that `index1=index2`,
     and handle this case correctly.
     """
-    pass
+    return ([("STATE1", "CITY1", 121.121, 55.555),\
+                ("STATE2", "CITY2", 39.161, -75.526)], 222.222)
 
 def shift_cities(road_map):
     """
@@ -46,7 +47,8 @@ def shift_cities(road_map):
     to the position i+1. The city at the last position moves to the position
     0. Return the new road map. 
     """
-    pass
+    return ([("STATE", "CITY", 121.121, 55.555),\
+                ("STATE2", "CITY2", 39.161, -75.526)])
 
 def find_best_cycle(road_map):
     """
