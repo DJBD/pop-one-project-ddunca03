@@ -10,7 +10,7 @@ def read_cities(file_name):
       Alabama -> Alaska -> Arizona -> ... -> Wyoming -> Alabama.
     """
     pass
-  
+
 def print_cities(road_map):
     """
     Prints a list of cities, along with their locations. 
