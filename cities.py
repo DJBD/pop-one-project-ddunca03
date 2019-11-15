@@ -9,7 +9,15 @@ def read_cities(file_name):
 
       Alabama -> Alaska -> Arizona -> ... -> Wyoming -> Alabama.
     """
-    pass
+    f = open(file_name, 'r')
+    lines = f.readlines()
+    list_of_tuples = []
+    for line in lines:
+        a = line.rstrip('\n').split("\t")
+        a = tuple(a)
+        list_of_tuples.append(a)
+
+    return(list_of_tuples)
 
 def print_cities(road_map):
     """

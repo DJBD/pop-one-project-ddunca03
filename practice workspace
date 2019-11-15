@@ -1,0 +1,5 @@
+import os
+import cities
+
+a = cities.read_cities('city-data.txt')
+print(a)
