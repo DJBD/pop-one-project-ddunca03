@@ -24,7 +24,11 @@ def print_cities(road_map):
     Prints a list of cities, along with their locations. 
     Print only one or two digits after the decimal point.
     """
-    pass
+    list_of_cities = []
+    for item in road_map:
+        a = (item[1] , round(float(item[2]),2), round(float(item[3]),2))
+        list_of_cities.append(a)
+    print(list_of_cities)
 
 def compute_total_distance(road_map):
     """
