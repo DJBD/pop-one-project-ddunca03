@@ -36,7 +36,16 @@ def compute_total_distance(road_map):
     the connections in the `road_map`. Remember that it's a cycle, so that 
     (for example) in the initial `road_map`, Wyoming connects to Alabama...
     """
-    return(111.111)
+    #sqrt((x1-x2)^2 + (y1-y2)^2)
+    import math
+    road_map.append(road_map[0])
+    total_distance = 0
+    for city in range (0, len(road_map)-1):
+        city_a = road_map[city][2],road_map[city][3]
+        city_b = road_map[city+1][2],road_map[city+1][3]
+        distance = math.sqrt(((float(city_a[0]) + float(city_b[0]))**2) + ((float(city_a[1]) + float(city_b[1])**2)))
+        total_distance += distance
+    return(total_distance)
 
 
 def swap_cities(road_map, index1, index2):
