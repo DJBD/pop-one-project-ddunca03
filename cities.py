@@ -59,8 +59,19 @@ def swap_cities(road_map, index1, index2):
     Allow for the possibility that `index1=index2`,
     and handle this case correctly.
     """
-    return ([("STATE1", "CITY1", 121.121, 55.555),\
-                ("STATE2", "CITY2", 39.161, -75.526)], 222.222)
+    import copy
+    city_index1 = road_map[index1]
+    city_index2 = road_map[index2]
+
+    if index1 != index2:
+        new_road_map = copy.deepcopy(road_map)
+        new_road_map[index1] = city_index2
+        new_road_map[index2] = city_index1
+        new_total_distance = compute_total_distance(new_road_map)
+        return (new_road_map, new_total_distance)
+    else:
+        print("Please Try Again")
+
 
 def shift_cities(road_map):
     """

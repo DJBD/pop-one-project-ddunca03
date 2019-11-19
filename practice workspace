@@ -6,3 +6,5 @@ a = cities.read_cities('city-data.txt')
 cities.print_cities(a)
 
 print(cities.compute_total_distance(a))
+
+print(cities.swap_cities(a, 1, 3))
