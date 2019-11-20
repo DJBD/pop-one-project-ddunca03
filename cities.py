@@ -84,14 +84,10 @@ def shift_cities(road_map):
     to the position i+1. The city at the last position moves to the position
     0. Return the new road map. 
     """
-    import copy
-    new_road_map = []
-    new_road_map.append(road_map[len(road_map)-1])
-    for i in range(0, len(road_map) - 2):
+    new_road_map = [road_map[len(road_map) - 1]]
+    for i in range(0, len(road_map)-1):
         new_road_map.append(road_map[i])
-    print(len(road_map))
-
-    print(road_map)
+    return(new_road_map)
 
 
 def find_best_cycle(road_map):
