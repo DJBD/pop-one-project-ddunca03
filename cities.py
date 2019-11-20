@@ -17,7 +17,8 @@ def read_cities(file_name):
         a = tuple(a)
         list_of_tuples.append(a)
 
-    return(list_of_tuples)
+    return (list_of_tuples)
+
 
 def print_cities(road_map):
     """
@@ -26,9 +27,10 @@ def print_cities(road_map):
     """
     list_of_cities = []
     for item in road_map:
-        a = (item[1] , round(float(item[2]),2), round(float(item[3]),2))
+        a = (item[0], item[1], round(float(item[2]), 2), round(float(item[3]), 2))
         list_of_cities.append(a)
     print(list_of_cities)
+
 
 def compute_total_distance(road_map):
     """
@@ -36,16 +38,19 @@ def compute_total_distance(road_map):
     the connections in the `road_map`. Remember that it's a cycle, so that 
     (for example) in the initial `road_map`, Wyoming connects to Alabama...
     """
-    #sqrt((x1-x2)^2 + (y1-y2)^2)
+    # sqrt((x1-x2)^2 + (y1-y2)^2)
     import math
-    road_map.append(road_map[0])
+    import copy
+    distance_road_map = copy.deepcopy(road_map)
+    distance_road_map.append(road_map[0])
     total_distance = 0
-    for city in range (0, len(road_map)-1):
-        city_a = road_map[city][2],road_map[city][3]
-        city_b = road_map[city+1][2],road_map[city+1][3]
-        distance = math.sqrt(((float(city_a[0]) + float(city_b[0]))**2) + ((float(city_a[1]) + float(city_b[1])**2)))
+    for city in range(0, len(distance_road_map) - 1):
+        city_a = distance_road_map[city][2], distance_road_map[city][3]
+        city_b = distance_road_map[city + 1][2], distance_road_map[city + 1][3]
+        distance = math.sqrt(((float(city_a[0]) + float(city_b[0])) ** 2) + (float(city_a[1]) + float(city_b[1]) ** 2))
         total_distance += distance
-    return(total_distance)
+
+    return (total_distance)
 
 
 def swap_cities(road_map, index1, index2):
@@ -79,8 +84,15 @@ def shift_cities(road_map):
     to the position i+1. The city at the last position moves to the position
     0. Return the new road map. 
     """
-    return ([("STATE", "CITY", 121.121, 55.555),\
-                ("STATE2", "CITY2", 39.161, -75.526)])
+    import copy
+    new_road_map = []
+    new_road_map.append(road_map[len(road_map)-1])
+    for i in range(0, len(road_map) - 2):
+        new_road_map.append(road_map[i])
+    print(len(road_map))
+
+    print(road_map)
+
 
 def find_best_cycle(road_map):
     """
@@ -91,6 +103,7 @@ def find_best_cycle(road_map):
     """
     pass
 
+
 def print_map(road_map):
     """
     Prints, in an easily understandable format, the cities and 
@@ -99,6 +112,7 @@ def print_map(road_map):
     """
     pass
 
+
 def main():
     """
     Reads in, and prints out, the city data, then creates the "best"
@@ -106,5 +120,6 @@ def main():
     """
     pass
 
-if __name__ == "__main__": #keep this in
+
+if __name__ == "__main__":  # keep this in
     main()
