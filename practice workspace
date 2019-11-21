@@ -7,6 +7,8 @@ cities.print_cities(a)
 
 print(cities.compute_total_distance(a))
 
-print(cities.swap_cities(a, 0, 1))
+#print((cities.swap_cities(a, 0, 1)))
 
 print(cities.shift_cities(a))
+
+cities.find_best_cycle(a)
