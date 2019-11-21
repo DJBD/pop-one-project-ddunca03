@@ -44,13 +44,13 @@ def compute_total_distance(road_map):
     distance_road_map = copy.deepcopy(road_map)
     distance_road_map.append(road_map[0])
     total_distance = 0
-    for city in range(0, len(distance_road_map) - 1):
+    for city in range(0, len(road_map)):
         city_a = distance_road_map[city][2], distance_road_map[city][3]
         city_b = distance_road_map[city + 1][2], distance_road_map[city + 1][3]
-        distance = math.sqrt(((float(city_a[0]) + float(city_b[0])) ** 2) + (float(city_a[1]) + float(city_b[1]) ** 2))
+        distance = math.sqrt(((float(city_a[0]) - float(city_b[0])) ** 2) + ((float(city_a[1]) - float(city_b[1])) ** 2))
         total_distance += distance
 
-    return (total_distance)
+    return total_distance
 
 
 def swap_cities(road_map, index1, index2):
@@ -73,7 +73,7 @@ def swap_cities(road_map, index1, index2):
         new_road_map[index1] = city_index2
         new_road_map[index2] = city_index1
         new_total_distance = compute_total_distance(new_road_map)
-        return (new_road_map, new_total_distance)
+        return new_road_map, new_total_distance
     else:
         return road_map, compute_total_distance(road_map)
 
@@ -87,7 +87,7 @@ def shift_cities(road_map):
     new_road_map = [road_map[len(road_map) - 1]]
     for i in range(0, len(road_map)-1):
         new_road_map.append(road_map[i])
-    return(new_road_map)
+    return new_road_map
 
 
 def find_best_cycle(road_map):
@@ -98,16 +98,16 @@ def find_best_cycle(road_map):
     Use randomly generated indices for swapping.
     """
     import random
-    a = road_map, compute_total_distance(road_map)
+    best_cycle = road_map, compute_total_distance(road_map)
 
-    for x in range (0, 10000):
+    for x in range (0, 100000):
         rand_index1 = int(round((49 * random.random()), 0))
         rand_index2 = int(round((49 * random.random()), 0))
-        b = swap_cities(a[0], rand_index1, rand_index2)
-        shift_cities(a[0])
-        if b[1] > a[1]:
-            a = b
-    print(a)
+        this_cycle = swap_cities(best_cycle[0], rand_index1, rand_index2)
+        shift_cities(best_cycle[0])
+        if this_cycle[1] < best_cycle[1]:
+            best_cycle = this_cycle
+    return (best_cycle)
 
 
 def print_map(road_map):
