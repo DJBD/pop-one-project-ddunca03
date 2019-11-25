@@ -7,16 +7,13 @@ def test_compute_total_distance():
                 ("Delaware", "Dover", 39.161921, -75.526755),\
                 ("Minnesota", "Saint Paul", 44.95, -93.094)]
     
-    assert compute_total_distance(road_map1)==\
-           pytest.approx(9.386+18.496+10.646, 0.01)
+    assert compute_total_distance(road_map1) == 11.111
 
-    assert compute_total_distance(road_map1) >= 0
            
 
     
 def test_swap_cities():
-    road_map2 = ([("STATE", "CITY", 121.121, 55.555),\
-                ("STATE1", "CITY1", 39.161, -75.526)])
+    road_map2 = ([("STATE", "CITY", 121.121, 55.555),("STATE1", "CITY1", 39.161, -75.526)])
 
     index1 = 0
     index2 = 1
