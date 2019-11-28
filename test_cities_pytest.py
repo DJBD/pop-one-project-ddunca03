@@ -9,12 +9,12 @@ def test_compute_total_distance():
 
 def test_swap_cities_1():
     assert swap_cities(simple_road_map,0,1) == ([("STATE1", "CITY1", 12, 0.0),("STATE", "CITY",0.0, 0.0),("STATE2", "CITY2", 12, 5.0),("STATE3", "CITY3", 0.0, 5.0)], 50.0)
+def test_swap_cities_2(): #write a test that swaps with itself/ should return the same roadmap
+    assert swap_cities(simple_road_map, 2, 2) == ([("STATE", "CITY",0.0, 0.0),("STATE1", "CITY1", 12, 0.0),("STATE2", "CITY2", 12, 5.0),("STATE3", "CITY3", 0.0, 5.0)], 34.0)
 
-    #write a test that swaps with itself/ should return the same roadmap
+    
     #write a test that deals with negitive indicies
     #write a test that measures the length of the roadmap
-
-
 
 def test_shift_cities():
     assert shift_cities(simple_road_map) == [("STATE3", "CITY3", 0.0, 5.0),("STATE", "CITY",0.0, 0.0),("STATE1", "CITY1", 12, 0.0),("STATE2", "CITY2", 12, 5.0)]
