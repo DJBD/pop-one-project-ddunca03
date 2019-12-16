@@ -101,8 +101,8 @@ def find_best_cycle(road_map):
     best_cycle = road_map, compute_total_distance(road_map)
 
     for x in range (0, 10000):
-        rand_index1 = int(round((49 * random.random()), 0)) #need to change so that it isn't just 50 cities... could be anything.
-        rand_index2 = int(round((49 * random.random()), 0))
+        rand_index1 = int(round(((len(road_map)-1) * random.random()), 0)) #need to change so that it isn't just 50 cities... could be anything.
+        rand_index2 = int(round(((len(road_map)-1) * random.random()), 0))
         this_cycle = swap_cities(best_cycle[0], rand_index1, rand_index2)
         if this_cycle[1] < best_cycle[1]:
             best_cycle = this_cycle
