@@ -11,4 +11,6 @@ print(compute_total_distance(a))
 
 #print(shift_cities(a))
 
-print(find_best_cycle(a))
+b = find_best_cycle(a)
+print(b)
+print_map(b)

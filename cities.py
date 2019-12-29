@@ -64,6 +64,7 @@ def swap_cities(road_map, index1, index2):
     Allow for the possibility that `index1=index2`,
     and handle this case correctly.
     """
+    # 1) need to handel exceptions/errors for negative and out of range index
     import copy
     city_index1 = road_map[index1]
     city_index2 = road_map[index2]
@@ -100,13 +101,13 @@ def find_best_cycle(road_map):
     import random
     best_cycle = road_map, compute_total_distance(road_map)
 
-    for x in range (0, 10000):
-        rand_index1 = int(round(((len(road_map)-1) * random.random()), 0)) #need to change so that it isn't just 50 cities... could be anything.
+    for x in range (0, 10000000):
+        rand_index1 = int(round(((len(road_map)-1) * random.random()), 0))
         rand_index2 = int(round(((len(road_map)-1) * random.random()), 0))
         this_cycle = swap_cities(best_cycle[0], rand_index1, rand_index2)
         if this_cycle[1] < best_cycle[1]:
             best_cycle = this_cycle
-    return (best_cycle)
+    return (best_cycle[0])
 
 
 def print_map(road_map):
@@ -115,7 +116,16 @@ def print_map(road_map):
     their connections, along with the cost for each connection 
     and the total cost.
     """
-    pass
+
+    print("Starting City: " + road_map[0][0] + ", " + road_map[0][1])
+
+    for i in range (1, len(road_map)):
+        print("Next Location: " + road_map[i][0] + ", " + road_map[i][1] + "\t\t\t\t\t\t" + "Travel Distance: " + str(compute_total_distance([(road_map[i-1]),(road_map[i])])))
+
+    print("Ending City: " + road_map[0][0] + ", " + road_map[0][1]+ "\t\t\t\t\t\t" + "Travel Distance: " + str(compute_total_distance([(road_map[(len(road_map)-1)]),(road_map[0])])))
+
+    print(compute_total_distance(road_map))
+
 
 
 def main():
