@@ -1,9 +1,9 @@
 import os
 from cities import *
 
-#a = read_cities('city-data.txt')
+a = read_cities('city-data.txt')
 
-#print_cities(a)
+print_cities(a)
 
 #print(compute_total_distance(a))
 
@@ -11,8 +11,11 @@ from cities import *
 
 #print(shift_cities(a))
 
-#b = find_best_cycle(a)
+b = find_best_cycle(a)
 #print(b)
 #print_map(b)
 
-main()
+#main()
+
+visualise(a)
+visualise(b)
