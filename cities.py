@@ -145,27 +145,27 @@ def main():
 
 def visualise(road_map):
 
-    """"
     window = tkinter.Tk()
     window.title("Roap Map Visualisation")
     top_frame = tkinter.Frame(window).pack()
     bottom_frame = tkinter.Frame(window).pack(side="bottom")
 
-    label = tkinter.Label(top_frame, text="Welcome to your roapmap itinerary!").pack()
-    my_canvas = Canvas(bottom_frame, width=360, height=180, background='white').pack()
-    #((int(item[2]),(int(item[3])),(int(item[2])),(int(item[3]))
-    #a = my_canvas.create_line(0,0,20,20, fill = "red")
 
-    window.mainloop()
-    pass
-    """
-    master = Tk()
+    label = Label(top_frame, text = "Welcome to your roadmap!").pack()
 
-    w = Canvas(master, width=360, height=180)
-    w.pack()
+    my_canvas = Canvas(bottom_frame, width=3600, height=1800, bg = 'white')
+    my_canvas.pack()
+    #my_canvas.config(scrollregion=my_canvas.bbox(ALL))
+
+    for i in range(0, 1800, 5):
+        my_canvas.create_line([(i, 0), (i, 900)], tag='grid_line')
+
+    for i in range(0, 900, 5):
+        my_canvas.create_line([(0, i), (1800, i)], tag='grid_line')
+
     for i in range (0,len(road_map)-1):
-        w.create_line(float(road_map[i][2])+90, float(road_map[i][3])+180,float(road_map[i+1][2])+90, float(road_map[i+1][3])+180, fill = "red")
-
+        my_canvas.create_line((float(road_map[i][2])+90)*5, (float(road_map[i][3])+180)*5,(float(road_map[i+1][2])+90)*5, (float(road_map[i+1][3])+180)*5, fill = "red", arrow ='last')
+        my_canvas.create_oval((float(road_map[i][2])+90)*5, (float(road_map[i][3])+180)*5,(float(road_map[i][2])+90)*5, (float(road_map[i][3])+180)*5, fill = "blue")
 
     mainloop()
 
