@@ -69,6 +69,13 @@ def swap_cities(road_map, index1, index2):
     and handle this case correctly.
     """
     # 1) need to handel exceptions/errors for negative and out of range index
+
+    if index1 < 0 or index2 < 0:
+        return ("Error: indicies in roadmap contain negative values")
+
+    if index1 > len(road_map) or index2 > len(road_map):
+        return ("Error: indicies in roadmap out of range")
+
     import copy
     city_index1 = road_map[index1]
     city_index2 = road_map[index2]

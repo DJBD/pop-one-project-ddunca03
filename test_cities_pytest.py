@@ -15,7 +15,7 @@ def test_swap_cities_3(): # a test that returns an error statement for negative 
     assert swap_cities(simple_road_map, -1, 3) == "Error: indicies in roadmap contain negative values"
 
 def test_swap_cities_4(): # a test that returns an error statement for indicies out of range
-    assert swap_cities(simple_road_map, -1, 6) == "Error: indicies in roadmap out of range"
+    assert swap_cities(simple_road_map, 1, 6) == "Error: indicies in roadmap out of range"
 
 def test_swap_cities_5(): # a test that measures the length of the roadmap
     simple_road_map_length = len(simple_road_map)

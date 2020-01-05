@@ -11,7 +11,7 @@ from cities import *
 
 #print(shift_cities(a))
 
-#b = find_best_cycle(a)
+#find_best_cycle(a)
 #print(b)
 #print_map(b)
 
