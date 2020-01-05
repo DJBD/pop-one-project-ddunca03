@@ -141,7 +141,7 @@ def main():
     print_cities(main_roadmap)
     best_cyclemap = find_best_cycle(main_roadmap)
     print_map(best_cyclemap)
-    #visualise(best_cyclemap)
+    visualise(best_cyclemap)
 
 def visualise(road_map):
 
@@ -149,19 +149,18 @@ def visualise(road_map):
     window.title("Roap Map Visualisation")
     top_frame = tkinter.Frame(window).pack()
     bottom_frame = tkinter.Frame(window).pack(side="bottom")
-
-
     label = Label(top_frame, text = "Welcome to your roadmap!").pack()
 
     my_canvas = Canvas(bottom_frame, width=3600, height=1800, bg = 'white')
     my_canvas.pack()
-    #my_canvas.config(scrollregion=my_canvas.bbox(ALL))
 
-    for i in range(0, 1800, 5):
-        my_canvas.create_line([(i, 0), (i, 900)], tag='grid_line')
+    # Creates all vertical lines at intevals of 100
+    for i in range(50, 3600, 10):
+        my_canvas.create_line([(i, 50), (i, 1800)])
 
-    for i in range(0, 900, 5):
-        my_canvas.create_line([(0, i), (1800, i)], tag='grid_line')
+    # Creates all horizontal lines at intevals of 100
+    for i in range(50, 1800, 10):
+        my_canvas.create_line([(50, i), (3600, i)])
 
     for i in range (0,len(road_map)-1):
         my_canvas.create_line((float(road_map[i][2])+90)*5, (float(road_map[i][3])+180)*5,(float(road_map[i+1][2])+90)*5, (float(road_map[i+1][3])+180)*5, fill = "red", arrow ='last')
