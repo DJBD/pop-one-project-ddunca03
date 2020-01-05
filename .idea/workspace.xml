@@ -159,7 +159,7 @@
       <workItem from="1577650972684" duration="6907000" />
       <workItem from="1578002553653" duration="1638000" />
       <workItem from="1578165182151" duration="20323000" />
-      <workItem from="1578254931809" duration="1732000" />
+      <workItem from="1578254931809" duration="5138000" />
     </task>
     <servers />
   </component>
@@ -190,7 +190,7 @@
     <SUITE FILE_PATH="coverage/pop_one_project_ddunca03$pytest_for_test_cities_pytest_test_compute_total_distance.coverage" NAME="pytest for test_cities_pytest.test_compute_total_distance Coverage Results" MODIFIED="1576516717650" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/pop_one_project_ddunca03$pytest_for_test_cities_pytest_test_swap_cities.coverage" NAME="pytest for test_cities_pytest.test_swap_cities Coverage Results" MODIFIED="1574953073272" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/pop_one_project_ddunca03$pytest_for_test_cities_pytest_test_swap_cities_1.coverage" NAME="pytest for test_cities_pytest.test_swap_cities_1 Coverage Results" MODIFIED="1574955924230" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/pop_one_project_ddunca03$practice_workspace.coverage" NAME="practice workspace Coverage Results" MODIFIED="1578257002444" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/pop_one_project_ddunca03$practice_workspace.coverage" NAME="practice workspace Coverage Results" MODIFIED="1578260097458" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/pop_one_project_ddunca03$pytest_for_test_cities_pytest_test_swap_cities_4.coverage" NAME="pytest for test_cities_pytest.test_swap_cities_4 Coverage Results" MODIFIED="1576517645382" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>
