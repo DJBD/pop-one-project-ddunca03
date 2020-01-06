@@ -174,21 +174,25 @@ def visualise(road_map):
 
     # Creates all vertical lines at intevals of 10
     text = -180
-    for i in range(50, 3600,100):
+    for i in range(0, 3600,100):
         my_canvas.create_line([(i, 50), (i, 1800)])
         my_canvas.create_text(i,40, text= text)
         text = text + 10
 
     # Creates all horizontal lines at intevals of 10
     text = -90
-    for i in range(50, 1800,100):
+    for i in range(0, 1800,100):
         my_canvas.create_line([(50, i), (3600, i)])
         my_canvas.create_text(40, i, text=text)
         text = text + 10
 
+    #my_canvas.create_line(x pixel,y pixel, x pixel, y pixel)
+
     for i in range (0,len(road_map)-1):
-        my_canvas.create_line((float(road_map[i][2])+900), (float(road_map[i][3])+1800),(float(road_map[i+1][2])+900), (float(road_map[i+1][3])+1800), fill = "red", arrow ='last')
-        my_canvas.create_oval((float(road_map[i][2])+900), (float(road_map[i][3])+1800),(float(road_map[i][2])+900), (float(road_map[i][3])+1800), fill = "blue")
+        my_canvas.create_text((float(road_map[i][3])+180)*10, (float(road_map[i][2])+90)*10, text = road_map[i][1])
+        my_canvas.create_line ((float(road_map[i][3])+180)*10, (float(road_map[i][2])+90)*10,(float(road_map[i+1][3])+180)*10, (float(road_map[i+1][2])+90)*10, fill = "red", arrow ='last')
+
+        #my_canvas.create_oval((float(road_map[i][3])+179)*10, (float(road_map[i][2])+89)*10,(float(road_map[i+1][3])+181)*10, (float(road_map[i+1][2])+91)*10, fill = "blue")
 
     mainloop()
 
