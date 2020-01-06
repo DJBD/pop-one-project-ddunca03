@@ -156,7 +156,7 @@ def visualise(road_map):
     window.title("Roap Map Visualisation")
     top_frame = tkinter.Frame(window).pack()
     bottom_frame = tkinter.Frame(window).pack(side="bottom")
-    Label(top_frame, text = "WELCOME TO YOUR ROADMAP!").pack()
+    Label(top_frame, text = "WELCOME TO YOUR ROADMAP! (please scroll)").pack()
 
     hbar = Scrollbar(bottom_frame, orient=HORIZONTAL)
     hbar.pack(side=BOTTOM, fill=X)
@@ -164,7 +164,7 @@ def visualise(road_map):
     vbar = Scrollbar(bottom_frame, orient=VERTICAL)
     vbar.pack(side=RIGHT, fill=Y)
 
-    my_canvas = Canvas(bottom_frame, width=3600, height=1800, scrollregion =(0, 0, 3600, 1800), xscrollcommand=hbar.set, yscrollcommand=vbar.set, bg = 'white')
+    my_canvas = Canvas(bottom_frame, width=7200, height=3600, scrollregion =(0, 0, 7200, 3600), xscrollcommand=hbar.set, yscrollcommand=vbar.set, bg = 'white')
     my_canvas.pack()
 
     hbar.config(command=my_canvas.xview)
@@ -172,25 +172,25 @@ def visualise(road_map):
     my_canvas.config(xscrollcommand=hbar.set, yscrollcommand=vbar.set)
     my_canvas.pack(side=LEFT, expand=True, fill=BOTH)
 
-    # Creates all vertical lines at intevals of 10
+    # Creates all vertical lines at intevals of 100
     text = -180
-    for i in range(0, 3600,100):
-        my_canvas.create_line([(i, 50), (i, 1800)])
+    for i in range(0, 7200,100):
+        my_canvas.create_line([(i, 50), (i, 3600)])
         my_canvas.create_text(i,40, text= text)
-        text = text + 10
+        text = text + 5
 
-    # Creates all horizontal lines at intevals of 10
+    # Creates all horizontal lines at intevals of 100
     text = -90
-    for i in range(0, 1800,100):
-        my_canvas.create_line([(50, i), (3600, i)])
+    for i in range(0, 3600,100):
+        my_canvas.create_line([(50, i), (7200, i)])
         my_canvas.create_text(40, i, text=text)
-        text = text + 10
+        text = text + 5
 
     #my_canvas.create_line(x pixel,y pixel, x pixel, y pixel)
 
     for i in range (0,len(road_map)-1):
-        my_canvas.create_text((float(road_map[i][3])+180)*10, (float(road_map[i][2])+90)*10, text = road_map[i][1])
-        my_canvas.create_line ((float(road_map[i][3])+180)*10, (float(road_map[i][2])+90)*10,(float(road_map[i+1][3])+180)*10, (float(road_map[i+1][2])+90)*10, fill = "red", arrow ='last')
+        my_canvas.create_line ((float(road_map[i][3])+180)*20, (float(road_map[i][2])+90)*20,(float(road_map[i+1][3])+180)*20, (float(road_map[i+1][2])+90)*20, fill = "red", arrow ='last')
+        my_canvas.create_text((float(road_map[i][3])+180)*20, (float(road_map[i][2])+90)*20, text = road_map[i][1] + " (" + str(i+1) +")")
 
         #my_canvas.create_oval((float(road_map[i][3])+179)*10, (float(road_map[i][2])+89)*10,(float(road_map[i+1][3])+181)*10, (float(road_map[i+1][2])+91)*10, fill = "blue")
 
